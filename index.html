@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Close Am I to Data Center Alley?</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>How Close Am I to Data Center Alley?</h1>
+      <p class="tagline">
+        An interactive page that shows how close everyday addresses are to major data center clusters in Northern Virginia.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Address Input Section -->
+    <section class="card" aria-labelledby="finder-title">
+      <h2 id="finder-title">Find Your Nearest Data Center (Northern Virginia)</h2>
+      <p class="section-intro">
+        Enter a home address, city, or ZIP code in Northern Virginia. This tool will estimate which major data center area is closest to that location.
+      </p>
+
+      <form id="address-form" class="address-form">
+        <label for="address-input">Address, city, or ZIP code</label>
+        <div class="form-row">
+          <input
+            type="text"
+            id="address-input"
+            name="address"
+            placeholder="e.g., 20148, Ashburn VA, or Arlington, VA"
+            required
+          />
+          <button type="submit">Check distance</button>
+        </div>
+        <p class="form-hint">
+          This tool is designed with Northern Virginia in mind, but you can try other places too.
+        </p>
+
+        <!-- New: example suggestions -->
+        <div class="suggestions" aria-label="Example Northern Virginia locations">
+          <span class="suggestion-label">Try one of these examples:</span>
+          <div class="chips-row">
+            <button type="button" class="chip" data-location="20148">
+              20148 (Ashburn)
+            </button>
+            <button type="button" class="chip" data-location="20147">
+              20147 (Ashburn)
+            </button>
+            <button type="button" class="chip" data-location="22201">
+              22201 (Arlington)
+            </button>
+            <button type="button" class="chip" data-location="22030">
+              22030 (Fairfax)
+            </button>
+            <button type="button" class="chip" data-location="20110">
+              20110 (Manassas)
+            </button>
+            <button type="button" class="chip" data-location="20176">
+              20176 (Leesburg)
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div id="result" class="result" aria-live="polite"></div>
+    </section>
+
+    <!-- Why It Matters Section -->
+    <section class="card" aria-labelledby="why-title">
+      <h2 id="why-title">Why does this matter?</h2>
+      <p>
+        Northern Virginia hosts one of the largest concentrations of data centers in the world. These facilities draw huge amounts of electricity,
+        strain local power grids, and can drive infrastructure costs that show up in residents’ bills.
+      </p>
+      <p>
+        Many of these facilities are built near communities that already face high housing costs, traffic, and environmental stress.
+        Knowing how close you are to data center clusters helps make this issue less invisible and more personal.
+      </p>
+    </section>
+    <!-- Impact & Justice Section -->
+    <section class="card" aria-labelledby="justice-title">
+      <h2 id="justice-title">Data centers and environmental justice</h2>
+      <ul class="bullet-list">
+        <li><strong>Energy burden:</strong> High electricity demand can require new transmission lines and grid upgrades, which communities help pay for.</li>
+        <li><strong>Land use:</strong> Large facilities replace open land or older buildings and can change neighborhood character.</li>
+        <li><strong>Unequal benefits:</strong> The jobs and profits may not go to the same people who live closest to the facilities and bear the impacts.</li>
+      </ul>
+      <p>
+        Tools like this can support conversations about fair zoning, environmental review, and ensuring that benefits are shared with nearby communities.
+      </p>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="card" aria-labelledby="compare-title">
+      <h2 id="compare-title">How does Northern Virginia compare to other data center hubs?</h2>
+      <p>
+        Northern Virginia’s data center market is much larger than many other major U.S. hubs.
+        This makes questions about power, land use, and community impact especially urgent here.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Relative Data Center Capacity</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Northern Virginia</strong></td>
+              <td>Very high</td>
+              <td>Largest concentration of data centers in the U.S.</td>
+            </tr>
+            <tr>
+              <td>Phoenix, AZ</td>
+              <td>High</td>
+              <td>Rapidly growing data center hub</td>
+            </tr>
+            <tr>
+              <td>Dallas–Fort Worth, TX</td>
+              <td>High</td>
+              <td>Large, established market</td>
+            </tr>
+            <tr>
+              <td>Atlanta, GA</td>
+              <td>Moderate–High</td>
+              <td>Important but smaller than Northern Virginia</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="footnote">
+        This comparison is based on public reports about data center markets. Even among these big hubs, Northern Virginia stands out.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Built as an awareness project about data centers and environmental justice in Northern Virginia.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
