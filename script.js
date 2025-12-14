@@ -1,5 +1,4 @@
-// --- Data: sample data center clusters in Northern Virginia ---
-// NOTE: These are approximate coordinates meant for demonstration purposes.
+
 const dataCenters = [
   {
     name: "Ashburn Data Center Cluster",
@@ -37,7 +36,7 @@ const OPENCAGE_API_KEY = "900d44ccba4046aca9c50c9813cc501b";
 async function geocodeAddressReal(address) {
   const encoded = encodeURIComponent(address);
 
-  // Used to nudge API toward Northern VA matches
+
   const novaLat = 38.9;
   const novaLon = -77.4;
 
@@ -67,7 +66,7 @@ async function geocodeAddressReal(address) {
 
 // --- Haversine formula for distance ---
 function distanceKm(lat1, lon1, lat2, lon2) {
-  const R = 6371; // Earth radius in km
+  const R = 6371; 
   const toRad = (deg) => (deg * Math.PI) / 180;
 
   const dLat = toRad(lat2 - lat1);
@@ -107,12 +106,12 @@ function findNearestDataCenter(userLat, userLon) {
 
 // - Randomized explanation messages -
 const explanations = [
-  "This doesn’t mean the buildings are visible from your home — it simply shows how close you are to extremely high electricity demand.",
+  "This doesn’t mean the buildings are visible from your home, it simply shows how close you are to extremely high electricity demand.",
   "Areas near major data centers often feel the effects through grid load, land development, and noise from cooling systems.",
   "Living close to a large data center cluster can mean increased energy costs and more pressure on local infrastructure.",
   "Northern Virginia's rapid data center growth impacts nearby communities in ways that aren't always obvious.",
   "Even if the buildings aren’t in view, data centers influence land use, traffic patterns, and energy consumption in surrounding areas.",
-  "This distance highlights how closely residential areas and data center infrastructure overlap in NoVA."
+  "This distance highlights how closely residential areas and data center infrastructure overlap in NOVA."
 ];
 
 // --- DOM handling ---
@@ -144,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultDiv.textContent = "Looking up your closest data center...";
 
     try {
-      // Real geocoding call
+
       const { lat, lon, formatted } = await geocodeAddressReal(address);
 
       const nearest = findNearestDataCenter(lat, lon);
